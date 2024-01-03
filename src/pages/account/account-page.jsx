@@ -1,14 +1,17 @@
 import styles from "./account-page.module.css";
 import Header from "../../components/header.jsx";
 import {useNavigate} from "react-router-dom";
+import {useContext} from "react";
+import {DataContext} from "../../utils/utils.js";
 
 const AccountPage = ({profile, handleProfile}) => {
 
     const navigate = useNavigate();
+    const {handleLogout} = useContext(DataContext);
     const {firstname, lastname, student_id} = profile;
 
     const handleClick = () => {
-        handleProfile({});
+        handleLogout();
         navigate("/");
     }
 

@@ -63,8 +63,13 @@ const App = () => {
         })
     }
 
+    const handleLogout = () => {
+        cookies.remove("fsuu_token");
+        setProfile(null);
+    }
+
     return (
-        <DataContext.Provider value={{ profile, handleLogin }}>
+        <DataContext.Provider value={{ profile, handleLogin, handleLogout }}>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<HomePage profile={profile}/>}/>

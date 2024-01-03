@@ -65,7 +65,7 @@ const App = () => {
 
     const handleLogout = () => {
         cookies.remove("fsuu_token");
-        setProfile(null);
+        setProfile({});
     }
 
     return (
